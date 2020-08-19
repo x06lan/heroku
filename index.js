@@ -37,7 +37,7 @@ function activity_data(dosome,inreq)
 	
 	return activity_form
 }
-app.get('/newdata_list', function (req, res) {
+app.get('', function (req, res) {
 		
 		res.end("is work")
 
