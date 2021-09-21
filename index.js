@@ -333,8 +333,9 @@ app.get('/cors_notion', function (req, res) {
 		},
 		method: "GET"
 	}).then(res_data=>res_data.json())
-	.then( res_data => {return res.end(JSON.stringify(res_data))})
+	.then( res_data => { res.end(JSON.stringify(res_data))})
 	.catch(err => console.error(err))
+	
 
 
 })
