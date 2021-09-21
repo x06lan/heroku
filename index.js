@@ -4,6 +4,7 @@ var express = require('express');
 var app = express();
 var fs = require("fs");
 const { url } = require("inspector");
+const { json } = require("express");
 var port=process.env.PORT || 5000;
 const datafile=__dirname + "/" + "data.json";
 
@@ -317,9 +318,9 @@ app.get('/javascript_run', function (req, res) {
 });
 app.get('/cors_notion', function (req, res) {
 
-	var type = req.query.id
-	var type = req.query.key
-	var type =req.query.url
+	var id = req.query.id
+	var key = req.query.key
+	var url =req.query.url
 	id="668d797c-76fa-4934-9b05-ad288df2d136"
 	console.log("id:"+id)
 	console.log("key:"+key)
@@ -330,8 +331,9 @@ app.get('/cors_notion', function (req, res) {
 		"Notion-Version": "2021-08-16"
 		// "Content-Type": "application/x-www-form-urlencoded"
 		},
-		method: "POST"
-	}).then(res=>res.json())
+		method: "GET"
+	}).then(res_data=>res_data.json())
+	.then( res_data => {return res.end(JSON.stringify(res_data))})
 	.catch(err => console.error(err))
 
 
