@@ -321,7 +321,7 @@ app.get('/cors_notion', function (req, res) {
 	var id = req.query.id
 	var key = req.query.key
 	var url =req.query.url
-	id="668d797c-76fa-4934-9b05-ad288df2d136"
+	// id="668d797c-76fa-4934-9b05-ad288df2d136"
 	console.log("id:"+id)
 	console.log("key:"+key)
 	fetch("https://api.notion.com/v1/databases/"+id, {
